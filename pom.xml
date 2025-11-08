@@ -10,8 +10,8 @@
         <!-- 版本对应： https://start.spring.io/actuator/info -->
     </parent>
 
-    <groupId>com.atguigu.daijia</groupId>
-    <artifactId>daijia-parent</artifactId>
+    <groupId>com.atguigu.uav</groupId>
+    <artifactId>uav-platform-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
 
@@ -20,7 +20,7 @@
         <module>model</module>
         <module>service</module>
         <module>web</module>
-        <module>server-gateway</module>
+        <module>gateway-server</module>
         <module>service-client</module>
     </modules>
 
