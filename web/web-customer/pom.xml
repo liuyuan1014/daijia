@@ -3,21 +3,21 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.atguigu.daijia</groupId>
+		<groupId>com.atguigu.uav_platform</groupId>
 		<artifactId>web</artifactId>
 		<version>1.0</version>
 	</parent>
 
-	<artifactId>web-customer</artifactId>
+	<artifactId>web-enterprise</artifactId>
 	<version>1.0</version>
 
 	<packaging>jar</packaging>
-	<name>web-customer</name>
-	<description>web-customer</description>
+	<name>web-enterprise</name>
+	<description>web-enterprise</description>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.atguigu.daijia</groupId>
+			<groupId>com.atguigu.uav_platform</groupId>
 			<artifactId>rabbit-util</artifactId>
 			<version>1.0</version>
 		</dependency>
@@ -25,7 +25,7 @@
 
 
 	<build>
-		<finalName>web-customer</finalName>
+		<finalName>web-enterprise</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

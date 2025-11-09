@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>daijia-parent</artifactId>
-        <groupId>com.atguigu.daijia</groupId>
+        <artifactId>uav_platform-parent</artifactId>
+        <groupId>com.atguigu.uav_platform</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -18,7 +18,7 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
+            <groupId>com.atguigu.uav_platform</groupId>
             <artifactId>common-util</artifactId>
             <version>1.0</version>
             <scope>provided </scope>

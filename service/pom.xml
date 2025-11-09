@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.atguigu.daijia</groupId>
-        <artifactId>daijia-parent</artifactId><version>1.0</version>
+        <groupId>com.atguigu.uav_platform</groupId>
+        <artifactId>uav_platform-parent</artifactId><version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,61 +13,61 @@
 
     <modules>
         <module>service-map</module>
-        <module>service-driver</module>
+        <module>service-uav-pilot</module>
         <module>service-coupon</module>
         <module>service-rules</module>
         <module>service-dispatch</module>
         <module>service-mq</module>
-        <module>service-order</module>
+        <module>service-task</module>
         <module>service-payment</module>
-        <module>service-customer</module>
+        <module>service-enterprise</module>
         <module>service-system</module>
     </modules>
 
     <dependencies>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
+            <groupId>com.atguigu.uav_platform</groupId>
             <artifactId>service-util</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
+            <groupId>com.atguigu.uav_platform</groupId>
             <artifactId>common-log</artifactId>
             <version>1.0</version>
         </dependency>
 
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
+            <groupId>com.atguigu.uav_platform</groupId>
             <artifactId>service-system-client</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
+            <groupId>com.atguigu.uav_platform</groupId>
             <artifactId>service-coupon-client</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
-            <artifactId>service-driver-client</artifactId>
+            <groupId>com.atguigu.uav_platform</groupId>
+            <artifactId>service-uav-pilot-client</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
-            <artifactId>service-order-client</artifactId>
+            <groupId>com.atguigu.uav_platform</groupId>
+            <artifactId>service-task-client</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
-            <artifactId>service-customer-client</artifactId>
+            <groupId>com.atguigu.uav_platform</groupId>
+            <artifactId>service-enterprise-client</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
+            <groupId>com.atguigu.uav_platform</groupId>
             <artifactId>service-rules-client</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
+            <groupId>com.atguigu.uav_platform</groupId>
             <artifactId>service-map-client</artifactId>
             <version>1.0</version>
         </dependency>

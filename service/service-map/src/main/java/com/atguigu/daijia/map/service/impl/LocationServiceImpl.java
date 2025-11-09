@@ -4,10 +4,10 @@ import com.atguigu.daijia.common.constant.RedisConstant;
 import com.atguigu.daijia.common.constant.SystemConstant;
 import com.atguigu.daijia.common.result.Result;
 import com.atguigu.daijia.common.util.LocationUtil;
-import com.atguigu.daijia.driver.client.DriverInfoFeignClient;
+import com.atguigu.daijia.uav.pilot.client.UavPilotInfoFeignClient;
 import com.atguigu.daijia.map.repository.OrderServiceLocationRepository;
 import com.atguigu.daijia.map.service.LocationService;
-import com.atguigu.daijia.model.entity.driver.DriverSet;
+import com.atguigu.daijia.model.entity.uav_pilot.UavPilotSet;
 import com.atguigu.daijia.model.entity.map.OrderServiceLocation;
 import com.atguigu.daijia.model.form.map.OrderServiceLocationForm;
 import com.atguigu.daijia.model.form.map.SearchNearByDriverForm;
@@ -16,7 +16,7 @@ import com.atguigu.daijia.model.form.map.UpdateOrderLocationForm;
 import com.atguigu.daijia.model.vo.map.NearByDriverVo;
 import com.atguigu.daijia.model.vo.map.OrderLocationVo;
 import com.atguigu.daijia.model.vo.map.OrderServiceLastLocationVo;
-import com.atguigu.daijia.order.client.OrderInfoFeignClient;
+import com.atguigu.daijia.task.client.TaskInfoFeignClient;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.BeanUtils;
@@ -48,10 +48,10 @@ public class LocationServiceImpl implements LocationService {
     private RedisTemplate redisTemplate;
 
     @Autowired
-    private OrderInfoFeignClient orderInfoFeignClient;
+    private TaskInfoFeignClient taskInfoFeignClient;
 
     @Autowired
-    private DriverInfoFeignClient driverInfoFeignClient;
+    private UavPilotInfoFeignClient uavPilotInfoFeignClient;
 
     @Autowired
     private OrderServiceLocationRepository orderServiceLocationRepository;
@@ -120,9 +120,9 @@ public class LocationServiceImpl implements LocationService {
                 //获取司机id
                 Long driverId = Long.parseLong(item.getContent().getName());
 
-                //远程调用，根据司机id个性化设置信息
-                Result<DriverSet> driverSetResult = driverInfoFeignClient.getDriverSet(driverId);
-                DriverSet driverSet = driverSetResult.getData();
+                //远程调用，根据无人机驾驶员id个性化设置信息
+                Result<UavPilotSet> driverSetResult = uavPilotInfoFeignClient.getUavPilotSet(driverId);
+                UavPilotSet driverSet = driverSetResult.getData();
 
                 //判断订单里程order_distance
                 BigDecimal orderDistance = driverSet.getOrderDistance();
@@ -255,9 +255,9 @@ public class LocationServiceImpl implements LocationService {
             }
         }
 
-        //TODO 为了测试，不好测试实际代驾距离，模拟数据  实际距离=预估距离+5公里
+        //TODO 为了测试，不好测试实际任务距离，模拟数据  实际距离=预估距离+5公里
         if(realDistance == 0) {
-            return orderInfoFeignClient.getOrderInfo(orderId).getData().getExpectDistance().add(new BigDecimal("5"));
+            return taskInfoFeignClient.getTaskInfo(orderId).getData().getExpectDistance().add(new BigDecimal("5"));
         }
 
         //3 返回最终计算实际距离

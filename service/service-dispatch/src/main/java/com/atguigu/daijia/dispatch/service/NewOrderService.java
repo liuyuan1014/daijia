@@ -1,7 +1,7 @@
 package com.atguigu.daijia.dispatch.service;
 
 import com.atguigu.daijia.model.vo.dispatch.NewOrderTaskVo;
-import com.atguigu.daijia.model.vo.order.NewOrderDataVo;
+import com.atguigu.daijia.model.vo.task.NewOrderDataVo;
 
 import java.util.List;
 

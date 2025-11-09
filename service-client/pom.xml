@@ -4,16 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.atguigu.daijia</groupId>
-        <artifactId>daijia-parent</artifactId>
+        <groupId>com.atguigu.uav_platform</groupId>
+        <artifactId>uav_platform-parent</artifactId>
         <version>1.0</version>
     </parent>
 
     <modules>
         <module>service-coupon-client</module>
-        <module>service-customer-client</module>
-        <module>service-driver-client</module>
-        <module>service-order-client</module>
+        <module>service-enterprise-client</module>
+        <module>service-uav-pilot-client</module>
+        <module>service-task-client</module>
         <module>service-system-client</module>
         <module>service-map-client</module>
         <module>service-rules-client</module>
@@ -27,13 +27,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
+            <groupId>com.atguigu.uav_platform</groupId>
             <artifactId>common-util</artifactId>
             <version>1.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.atguigu.daijia</groupId>
+            <groupId>com.atguigu.uav_platform</groupId>
             <artifactId>model</artifactId>
             <version>1.0</version>
         </dependency>

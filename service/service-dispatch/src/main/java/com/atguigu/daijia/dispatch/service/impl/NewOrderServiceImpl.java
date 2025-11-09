@@ -11,8 +11,8 @@ import com.atguigu.daijia.model.enums.OrderStatus;
 import com.atguigu.daijia.model.form.map.SearchNearByDriverForm;
 import com.atguigu.daijia.model.vo.dispatch.NewOrderTaskVo;
 import com.atguigu.daijia.model.vo.map.NearByDriverVo;
-import com.atguigu.daijia.model.vo.order.NewOrderDataVo;
-import com.atguigu.daijia.order.client.OrderInfoFeignClient;
+import com.atguigu.daijia.model.vo.task.NewOrderDataVo;
+import com.atguigu.daijia.task.client.TaskInfoFeignClient;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class NewOrderServiceImpl implements NewOrderService {
     private LocationFeignClient locationFeignClient;
 
     @Autowired
-    private OrderInfoFeignClient orderInfoFeignClient;
+    private TaskInfoFeignClient taskInfoFeignClient;
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -93,7 +93,7 @@ public class NewOrderServiceImpl implements NewOrderService {
 
         //获取orderId
         Long orderId = newOrderTaskVo.getOrderId();
-        Integer status = orderInfoFeignClient.getOrderStatus(orderId).getData();
+        Integer status = taskInfoFeignClient.getTaskStatus(orderId).getData();
         if(status.intValue() != OrderStatus.WAITING_ACCEPT.getStatus().intValue()) {
             //停止任务调度
             xxlJobClient.stopJob(jobId);
